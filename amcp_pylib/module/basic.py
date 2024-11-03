@@ -71,6 +71,15 @@ def CLEAR(command: Command) -> Command:
     return command
 
 
+@command_syntax('CLEAR ALL')
+def CLEAR_ALL(command: Command) -> Command:
+    """
+    Removes all clips (both foreground and background) of the specified layer.
+    If no layer is specified then all layers in the specified video_channel are cleared.
+    """
+    return command
+
+
 @command_syntax('CALL [video_channel:int]{-[layer:int]|-0} [param:string]')
 def CALL(command: Command) -> Command:
     """
